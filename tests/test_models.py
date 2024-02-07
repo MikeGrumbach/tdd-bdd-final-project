@@ -138,7 +138,7 @@ class TestProductModel(unittest.TestCase):
         self.assertEqual(products[0].description, "testing")
 
     def test_invalid_id_on_update(self):
-        " Test invalid ID update " # tests line 106 in service/models.py
+        " Test invalid ID update "
         product = ProductFactory()
         product.id = None
         self.assertRaises(DataValidationError, product.update)
@@ -186,7 +186,7 @@ class TestProductModel(unittest.TestCase):
         found = Product.find_by_price(price)
         self.assertEqual(found.count(), count)
         for product in found:
-            self.assertEqual(product.price, price)        
+            self.assertEqual(product.price, price)
 
     def test_find_by_availability(self):
         """It should Find Products by Availability"""
